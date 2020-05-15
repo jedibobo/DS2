@@ -49,14 +49,14 @@ void Pavement<type>::Print_pavement() {
 	int status;
 	int h = 1;
 	type temp;
-	
+	int car_num = (maxsize + tail - head) % maxsize;
 	Print(0, h * 4 - 1, "±ãµÀ×´Ì¬", 15);
 	for (j = 0; j < 20; ) {
 		for (i = 0; i < 7; i++) {
 
-			if (j >= head && j < tail) {
+			if ( j < car_num) {
 				status = 1;
-				temp = elements[j+1];
+				temp = elements[(head + j + 1)%maxsize];
 				Print_Stall(i * 13, h * 4, status, temp.Plate);
 			}
 			else {

@@ -1,0 +1,10 @@
+﻿  main.cpp
+D:\0learn\coding\fromGithub\DS2\main.cpp(19,10): warning C4101: “filename”: 未引用的局部变量
+D:\0learn\coding\fromGithub\DS2\park.cpp(205,21): warning C4018: “<”: 有符号/无符号不匹配
+D:\0learn\coding\fromGithub\DS2\park.cpp(176): message : 在编译 类 模板 成员函数“void ParkingLot<Car>::Print_park(void)”时
+D:\0learn\coding\fromGithub\DS2\main.cpp(32): message : 查看对正在编译的函数 模板 实例化“void ParkingLot<Car>::Print_park(void)”的引用
+D:\0learn\coding\fromGithub\DS2\main.cpp(14): message : 查看对正在编译的 类 模板 实例化“ParkingLot<Car>”的引用
+  park.cpp
+  pavement.cpp
+  正在生成代码...
+  Project2.vcxproj -> D:\0learn\coding\fromGithub\DS2\x64\Debug\Project2.exe
