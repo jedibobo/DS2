@@ -15,6 +15,7 @@ int read_line;
 int main()
 {	
     //cyh
+    
     ParkingLot<Car> p;
     tempParkingLot<Car> tp;
     Pavement<Car> p1;
@@ -28,15 +29,19 @@ int main()
     cout << "3：车辆驶入" << endl;
     cout << "4：车辆驶离" << endl;
     int choice; cin >> choice;
+    
     switch (choice) {
     case 1:
         system("cls");
         p.Print_park();
         goto L1;
+        
     case 2:
+        system("cls");
         p1.getstate();
         p1.Print_pavement();
         goto L1;
+       
     case 3:
         cout << "0是手动输入，1是从文件中读取" << endl;
         cin >> flag;
@@ -140,8 +145,10 @@ int main()
         cin >> co.Plate;
         p.Pop1(co);
         goto L1;
+        
     default:
         return 0;
     }
+    
 	return 0;
 }
