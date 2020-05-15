@@ -21,7 +21,7 @@ using namespace std;
 template <typename T>
 void Print(int x, int y, T output, int color);  //打印函数
 template <typename T>
-void Print_Stall(int x, int y, int status, T licence);
+void Print_Stall(int x, int y, int status, T licence);  //打印车位函数
 
 template<class type>
 struct Space//停车位

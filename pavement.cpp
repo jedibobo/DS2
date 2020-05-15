@@ -1,18 +1,19 @@
 
 
 #include "pavement.hpp"
-#include "head.h"
+#include "parkinglot.h"
 template<class type>
 void Pavement<type>::Print_pavement() {
 	int i = 0, j = 0;
-
+	int status;
 	int h = 1;
 	Print(0, h * 4 - 1, "±ãµÀ×´Ì¬",15);
 	for (j = 0; j < 20; ) {
 		for (i = 0; i < 7; i++) {
 
-			
-			Print_Stall(i * 13, h * 4, j >=head && j<tail, j);
+			if (j >= head && j < tail) status = 1;
+			else status = 2;
+			Print_Stall(i * 13, h * 4, status, j);
 			if (j >= 20) break;
 			j++;
 		}

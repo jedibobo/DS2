@@ -6,7 +6,7 @@
 //  Copyright © 2020 Cedric. All rights reserved.
 //
 
-#include "head.h"
+#include "parkinglot.h"
 
 template <typename T>
 void Print(int x, int y, T output, int color = 15) {
@@ -24,8 +24,10 @@ void Print_Stall(int x, int y, int status, T licence) {
     int color;
     char output = '=';
     int i;
-    if (status == 0) {
+    if (status == 0||status==2) {
         color = 2;
+        if(status==2) Print(x + 2, y + 1, licence, color);  //此时为查询便道，该车位为空
+        else if(status==0) Print(x + 2, y + 1, "空", color); //此时为查询车位，车位为空
     }
     else {
         color = 4;

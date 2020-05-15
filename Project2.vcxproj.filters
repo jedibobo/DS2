@@ -15,10 +15,10 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="head.h">
+    <ClInclude Include="pavement.hpp">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="pavement.hpp">
+    <ClInclude Include="parkinglot.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

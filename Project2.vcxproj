@@ -139,7 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="head.h" />
+    <ClInclude Include="parkinglot.h" />
     <ClInclude Include="pavement.hpp" />
   </ItemGroup>
   <ItemGroup>
