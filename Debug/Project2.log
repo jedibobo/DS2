@@ -1,0 +1,4 @@
+﻿  main.cpp
+F:\Wechat\WeChat Files\liuyibo0514\FileStorage\File\2020-05\Project2(1)\Project2\Project2\park.cpp(55,42): warning C4018: “<=”: 有符号/无符号不匹配
+F:\Wechat\WeChat Files\liuyibo0514\FileStorage\File\2020-05\Project2(1)\Project2\Project2\main.cpp(23,10): warning C4101: “filename”: 未引用的局部变量
+  Project2.vcxproj -> F:\Wechat\WeChat Files\liuyibo0514\FileStorage\File\2020-05\Project2(1)\Project2\Project2\Debug\Project2.exe
