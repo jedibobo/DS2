@@ -70,7 +70,7 @@ int main()
         }
         else
         {
-            string  strFileName = "F:\\编程\\c\\数据结构\\Stop\\fakedata.csv";   //【0】文件名
+            string  strFileName = "fakedata.csv";   //【0】文件名
             fstream file;                                     //【1】声明一个文件输入输出流对象
             file.open(strFileName.c_str(), std::ios::in);           //【2】以读文件的方式打开文件
             if (!file.is_open())
