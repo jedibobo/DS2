@@ -43,29 +43,7 @@ void Print_Stall(int x, int y, int status, T licence) {
     }
 
 }
-template<class type>
-void ParkingLot<type>::Print_park() {
-    int i = 0, j = 0;
-    
-    int h = 1;
-    Print(0, 3, "停车场状态", 15);
-    for (j = 0; j < maxSpace; ) {
-        for (i = 0; i < 5 ; i++) {
-            
-            if (j >= maxSpace) break;
-            j++;
-            Print_Stall(i * 13, h * 4, j <= height, "有车");
-        }
-        h=h+1;
-    }
-    int hn = h * 4+2;
-    for (i = 0; i < 75; i++) {
-        Print(i, hn, "-",15);
-    }
-    cout << endl;
-    hn += 2;
 
-}
 
 template<class type>
 ParkingLot<type>::ParkingLot()
@@ -127,6 +105,7 @@ void ParkingLot<type>::Pop1(type& x)
 {
     type temp;
     tempParkingLot<type> tp;
+    
     this->Pop(temp);
     while (temp.Plate != x.Plate)
     {
@@ -193,7 +172,63 @@ bool tempParkingLot<type>::Pop(type& x)
     return false;
 }
 
+template<class type>
+void ParkingLot<type>::Print_park() {
+    int i = 0, j = 0;
+    
 
+    type temp;
+    tempParkingLot<type> tp;
+    /*
+    this->Pop(temp);
+    while (temp.Plate != x.Plate)
+    {
+        tp.Push(temp);
+        this->Pop(temp);
+    }
+    while (tp.IsEmpty() != true)
+    {
+        tp.Pop(temp);
+        this->Push(temp);
+    }
+    */
+    int h = 1;
+    int state;
+    int emmm=-1;   //检测有多少个空位
+    string temp_Plate;
+    Print(0, 3, "停车场状态", 15);
+    for (j = 0; j < maxSpace; ) {
+        for (i = 0; i < 5; i++) {
+            if (j >= maxSpace) break;
+            j++;
+            emmm++;
+            if (emmm<15-height) {
+                state = 0;
+                temp_Plate = "空";
+            }
+            else {
+                state = 1;
+                this->Pop(temp);
+                temp_Plate = temp.Plate;
+                tp.Push(temp);
+            }
+            Print_Stall(i * 13, h * 4, state, temp_Plate);
+        }
+        h = h + 1;
+    }
+    int hn = h * 4 + 2;
+    for (i = 0; i < 75; i++) {
+        Print(i, hn, "-", 15);
+    }
+    cout << endl;
+    //hn += 2;
+    while (tp.IsEmpty() != true)
+    {
+        tp.Pop(temp);
+        this->Push(temp);
+    }
+
+}
 
 
 

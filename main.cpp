@@ -5,12 +5,7 @@
 #include <fstream>    // file stream
 #include <sstream>    // string stream
 
-struct Car
-{
-	string Plate;
-    int In[2] = { 0,0 };
-    int Out[2] = { 0,0 };
-};
+
 int read_line;
 int main()
 {	

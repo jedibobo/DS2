@@ -23,6 +23,13 @@ void Print(int x, int y, T output, int color);  //打印函数
 template <typename T>
 void Print_Stall(int x, int y, int status, T licence);  //打印车位函数
 
+struct Car
+{
+    string Plate;
+    int In[2] = { 0,0 };
+    int Out[2] = { 0,0 };
+};
+
 template<class type>
 struct Space//停车位
 {
@@ -41,6 +48,7 @@ public:
     bool Push(type& x);
     bool Pop(type& x);
     void Pop1(type& x);//取出指定车
+    type Top();
     //template <typename T>
     //void Print_Stall(int x, int y, int status, string licence);
     void Print_park();

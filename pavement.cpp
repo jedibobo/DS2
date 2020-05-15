@@ -2,30 +2,7 @@
 
 #include "pavement.hpp"
 #include "parkinglot.h"
-template<class type>
-void Pavement<type>::Print_pavement() {
-	int i = 0, j = 0;
-	int status;
-	int h = 1;
-	Print(0, h * 4 - 1, "±ãµÀ×´Ì¬",15);
-	for (j = 0; j < 20; ) {
-		for (i = 0; i < 7; i++) {
 
-			if (j >= head && j < tail) status = 1;
-			else status = 2;
-			Print_Stall(i * 13, h * 4, status, j);
-			if (j >= 20) break;
-			j++;
-		}
-		h = h + 1;
-	}
-	int hn = h * 4 + 2;
-	for (i = 0; i < 75; i++) {
-		Print(i, hn, "-",15);
-	}
-	cout << endl;
-	hn += 2;
-}
 
 template<class type>
 Pavement<type>::Pavement(int i)
@@ -66,7 +43,39 @@ bool Pavement<type>::Pop(type &x)
 	return true; 
 }
 
+template<class type>
+void Pavement<type>::Print_pavement() {
+	int i = 0, j = 0;
+	int status;
+	int h = 1;
+	type temp;
+	
+	Print(0, h * 4 - 1, "±ãµÀ×´Ì¬", 15);
+	for (j = 0; j < 20; ) {
+		for (i = 0; i < 7; i++) {
 
+			if (j >= head && j < tail) {
+				status = 1;
+				temp = elements[j+1];
+				Print_Stall(i * 13, h * 4, status, temp.Plate);
+			}
+			else {
+				status = 2;
+				Print_Stall(i * 13, h * 4, status, j);
+			}
+			
+			if (j >= 20) break;
+			j++;
+		}
+		h = h + 1;
+	}
+	int hn = h * 4 + 2;
+	for (i = 0; i < 75; i++) {
+		Print(i, hn, "-", 15);
+	}
+	cout << endl;
+	//hn += 2;
+}
 
 
 
