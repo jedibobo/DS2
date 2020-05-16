@@ -1,0 +1,2 @@
+D:\bit life\Git\Code\DS2_1\x64\Debug\Project2.exe
+D:\bit life\Git\Code\DS2_1\x64\Debug\Project2.pdb

@@ -14,7 +14,7 @@ int main()
     ParkingLot<Car> p;
     tempParkingLot<Car> tp;
     Pavement<Car> p1;
-    Car c, co;
+    Car c, co, ca;
     string car_label;
     char filename[256];
     bool check, checkp, flag;
@@ -140,6 +140,11 @@ int main()
         cout << "请输入车牌号" << endl;
         cin >> co.Plate;
         p.Pop1(co);
+        if(~p1.IsEmpty())
+        {
+            p1.Pop(ca);
+            p.Push(ca);
+        }
         goto L1;
         /**/
     default:

@@ -1,0 +1,11 @@
+﻿  main.cpp
+D:\bit life\Git\Code\DS2_1\main.cpp(143,25): warning C4804: “~”: 在操作中使用类型“bool”不安全
+D:\bit life\Git\Code\DS2_1\main.cpp(19,10): warning C4101: “filename”: 未引用的局部变量
+D:\bit life\Git\Code\DS2_1\park.cpp(205,21): warning C4018: “<”: 有符号/无符号不匹配
+D:\bit life\Git\Code\DS2_1\park.cpp(176): message : 在编译 类 模板 成员函数“void ParkingLot<Car>::Print_park(void)”时
+D:\bit life\Git\Code\DS2_1\main.cpp(32): message : 查看对正在编译的函数 模板 实例化“void ParkingLot<Car>::Print_park(void)”的引用
+D:\bit life\Git\Code\DS2_1\main.cpp(14): message : 查看对正在编译的 类 模板 实例化“ParkingLot<Car>”的引用
+  park.cpp
+  pavement.cpp
+  正在生成代码...
+  Project2.vcxproj -> D:\bit life\Git\Code\DS2_1\x64\Debug\Project2.exe
