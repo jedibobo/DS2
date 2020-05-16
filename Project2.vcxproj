@@ -141,6 +141,7 @@
   <ItemGroup>
     <ClInclude Include="parkinglot.h" />
     <ClInclude Include="pavement.hpp" />
+    <ClInclude Include="functions.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />

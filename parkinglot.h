@@ -26,8 +26,8 @@ void Print_Stall(int x, int y, int status, T licence);  //打印车位函数
 struct Car
 {
     string Plate;
-    int In[2] = { 0,0 };
-    int Out[2] = { 0,0 };
+    int In ;
+    int Out ;
 };
 
 template<class type>
