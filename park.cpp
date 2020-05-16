@@ -104,13 +104,25 @@ template<class type>
 void ParkingLot<type>::Pop1(type& x)
 {
     type temp;
+    bool check = true;
     tempParkingLot<type> tp;
-    
     this->Pop(temp);
     while (temp.Plate != x.Plate)
     {
         tp.Push(temp);
-        this->Pop(temp);
+        check = this->Pop(temp);
+    }
+    if (check == false)
+    {
+        type falsecar;
+        falsecar.Plate = "刘爷牛逼";
+        falsecar.In = 0;
+        falsecar.Out = 0;
+        x = falsecar;
+    }
+    else
+    {
+        x = temp;
     }
     while (tp.IsEmpty() != true)
     {

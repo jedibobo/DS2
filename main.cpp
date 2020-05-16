@@ -120,7 +120,7 @@ int main()
                     int x, y;
                     str2int(x,in_time);
                     str2int(y, out_time);
-                    cout << "in_time= " << in_time<< "  " << "out_time= " << out_time <<  endl;
+                    //cout << "in_time= " << in_time<< "  " << "out_time= " << out_time <<  endl;
                     count += 1;
                     c.Plate = car_label;
                     c.In = x;
@@ -148,6 +148,7 @@ int main()
     }
     case 4:
     {
+        system("cls");
         cout << "请输入车牌号,all全部清空重置数据库" << endl;
         string out;//车辆出的车牌号或者全部清空标识符
         cin >> out;
@@ -167,6 +168,8 @@ int main()
                 p1.Pop(ca);
                 p.Push(ca);
             }
+            std::system("pause");
+            system("cls");
             goto L1;
             
         }
