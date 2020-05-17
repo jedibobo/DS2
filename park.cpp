@@ -101,24 +101,25 @@ bool ParkingLot<type>::Pop(type& x)
 }
 
 template<class type>
-void ParkingLot<type>::Pop1(type& x)
+bool ParkingLot<type>::Pop1(type& x)
 {
     type temp;
+    bool is_in = true;
     bool check = true;
     tempParkingLot<type> tp;
     this->Pop(temp);
-    while (temp.Plate != x.Plate)
+    while (temp.Plate != x.Plate && check == true)
     {
         tp.Push(temp);
         check = this->Pop(temp);
     }
     if (check == false)
     {
-        type falsecar;
-        falsecar.Plate = "刘爷牛逼";
-        falsecar.In = 0;
-        falsecar.Out = 0;
+        Car falsecar;
+        falsecar.Plate = "拥有该车牌号的车辆不在停车场！";
         x = falsecar;
+        is_in = false;
+        //delete falsecar;
     }
     else
     {
@@ -129,6 +130,7 @@ void ParkingLot<type>::Pop1(type& x)
         tp.Pop(temp);
         this->Push(temp);
     }
+    return is_in;
 }
 
 

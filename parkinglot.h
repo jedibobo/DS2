@@ -47,7 +47,7 @@ public:
     inline bool IsEmpty() { return (height == 0) ? true : false; }
     bool Push(type& x);
     bool Pop(type& x);
-    void Pop1(type& x);//取出指定车
+    bool Pop1(type& x);//取出指定车
     type Top();
     //template <typename T>
     //void Print_Stall(int x, int y, int status, string licence);

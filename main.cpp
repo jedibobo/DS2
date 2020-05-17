@@ -162,7 +162,14 @@ int main()
         {
             co.Plate=out;
             p.Pop1(co);//这里需要一个根据车牌查找的函数
-            cout << "停车费用为：" << parking_cost(co)<<endl;
+            if (p.Pop1(co))
+            {
+                cout << "停车费用为：" << parking_cost(co)<<endl;
+            }
+            else
+            {
+                cout << co.Plate << endl;
+            }
             if (!p1.IsEmpty())
             {
                 p1.Pop(ca);
@@ -177,6 +184,5 @@ int main()
     default:
         return 0;
     }
-    
 	return 0;
 }
