@@ -77,6 +77,43 @@ void Pavement<type>::Print_pavement() {
 	//hn += 2;
 }
 
+template<class type>
+void Pavement<type>::check() {
+	int i = 0, j = 0;
+	int status;
+	int h = 16;
+	type temp;
+	int car_num = (maxsize + tail - head) % maxsize;
+	Print(0, h * 4 - 1, "±ãµÀ×´Ì¬", 15);
+	for (j = 0; j < 20; ) {
+		for (i = 0; i < 1; i++) {
+
+			if (j < car_num) {
+				status = 1;
+				temp = elements[(head + j + 1) % maxsize];
+				Print_Stall(i * 13, h * 4, status, j);
+				Print_Stall(13, h * 4, status, temp.Plate);
+				Print_Stall(26, h * 4, status, temp.In);
+			}
+			else {
+				status = 2;
+				Print_Stall(i * 13, h * 4, status, j);
+				Print_Stall(13, h * 4, status, "¿Õ");
+				Print_Stall(26, h * 4, status, "¡ª¡ª");
+			}
+
+			if (j >= 20) break;
+			j++;
+		}
+		h = h + 1;
+	}
+	int hn = h * 4 + 2;
+	for (i = 0; i < 75; i++) {
+		Print(i, hn, "-", 15);
+	}
+	cout << endl;
+	//hn += 2;
+}
 
 
 

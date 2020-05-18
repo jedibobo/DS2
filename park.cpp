@@ -190,22 +190,9 @@ template<class type>
 void ParkingLot<type>::Print_park() {
     int i = 0, j = 0;
     
-
     type temp;
     tempParkingLot<type> tp;
-    /*
-    this->Pop(temp);
-    while (temp.Plate != x.Plate)
-    {
-        tp.Push(temp);
-        this->Pop(temp);
-    }
-    while (tp.IsEmpty() != true)
-    {
-        tp.Pop(temp);
-        this->Push(temp);
-    }
-    */
+    
     int h = 1;
     int state;
     int emmm=-1;   //检测有多少个空位
@@ -256,7 +243,48 @@ void ParkingLot<type>::Print_park() {
     }
 
 }
+template<class type>
+void ParkingLot<type>::check() {
+    type temp;
+    tempParkingLot<type> tp;
 
-
+    int h = 1;
+    int state;
+    int emmm = -1;   //检测有多少个空位
+    string temp_Plate;
+    printf("停车位编号       车牌号     入库时间\n");
+    int j = 0; int i = 0;
+    for (emmm = 0; emmm < height; emmm++) {
+        this->Pop(temp);
+        temp_Plate = temp.Plate;
+        tp.Push(temp);
+    }
+    
+    //int hn = h * 4 + 2;
+    //for (i = 0; i < 75; i++) {
+    //    Print(i, hn, "-", 15);
+    //}
+    //cout << endl;
+    //hn += 2;
+    h = 1;
+    emmm = 0;
+    while (tp.IsEmpty() != true)
+    {
+        tp.Pop(temp);
+        Print_Stall(0, h * 4-3, 1, emmm);
+        emmm++;
+        temp_Plate = temp.Plate;
+        Print_Stall(13, h * 4-3, 1, temp_Plate);
+        Print_Stall(26, h * 4 - 3, 1, temp.In);
+        this->Push(temp);
+        h++;
+    }
+    for (; emmm < maxSpace; emmm++) {
+        Print_Stall(0, h * 4-3, 0, emmm);
+        Print_Stall(13, h * 4-3, 0, "空");
+        Print_Stall(26, h * 4 - 3, 0, "——");
+        h++;
+    }
+}
 
 

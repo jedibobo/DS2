@@ -52,6 +52,7 @@ public:
     //template <typename T>
     //void Print_Stall(int x, int y, int status, string licence);
     void Print_park();
+    void check();
 
 protected:
     unsigned height;

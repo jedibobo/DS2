@@ -35,4 +35,5 @@ class Pavement:public abpave<type>//循环队列
 		bool Pop(type &);//出队 
 		void outzero(){cout<<"head="<<head<<"所指的位置为便道0"<<endl;}
 		void Print_pavement();
+		void check();
 }; 
