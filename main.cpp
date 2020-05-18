@@ -2,6 +2,7 @@
 #include "park.cpp"
 #include <vector>
 #include<string>
+#include <iomanip>
 #include <fstream>    // file stream
 #include <sstream>    // string stream
 #include "functions.h"
@@ -117,7 +118,7 @@ int main()
                     string car_label = fields[0]; //清除掉向量fields中第一个元素的无效字符，并赋值给变量name
                     string in_time = fields[1];
                     string out_time = fields[2];
-                    std::cout << car_label << std::endl;
+                    std::cout << setw(9) << setfill(' ')<<car_label << "    入库时间为:"<<setw(6) << setfill('0')<<in_time<<"    ";
                     int x, y;
                     str2int(x,in_time);
                     str2int(y, out_time);
@@ -142,6 +143,7 @@ int main()
                         cout << "入库成功" << endl;
                     }
                 }
+                cout << endl;
 
             }
             std::cout << "【NOTICE】已按照要求的数量读取并写入。" << std::endl;
@@ -150,19 +152,29 @@ int main()
     case 3:
     {
         system("cls");
-        cout << "请输入车牌号,all全部清空重置数据库" << endl;
+        cout << "请输入车牌号,all全部清空停车场" << endl;
         string out;//车辆出的车牌号或者全部清空标识符
         cin >> out;
         if (out == "all")
         {
             p.Clear();
+            while (!p1.IsEmpty())
+            {
+                if (!p.IsFull())
+                {
+                    p1.Pop(ca);
+                    p.Push(ca);
+                }
+                else
+                    break;
+            }
             system("cls");
             goto L1;
         }
         else
         {
             co.Plate=out;
-            p.Pop1(co);//这里需要一个根据车牌查找的函数
+            //p.Pop1(co);//这里需要一个根据车牌查找的函数
             if (p.Pop1(co))
             {
                 cout << "停车费用为：" << parking_cost(co)<<endl;

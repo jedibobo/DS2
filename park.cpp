@@ -85,6 +85,15 @@ bool ParkingLot<type>::Push(type& x)
 }
 
 template<class type>
+bool ParkingLot<type>::IsFull()
+{
+    if (height + 1 > maxSpace)//栈满
+        return true;
+    else
+        return false;
+}
+
+template<class type>
 bool ParkingLot<type>::Pop(type& x)
 {
     Space<type>* p;

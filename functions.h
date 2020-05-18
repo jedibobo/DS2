@@ -14,7 +14,7 @@ double parking_cost(Car p)
 {
     int duration;
     double cost;
-    //cout << p.Out << "    " << p.In<<endl;
+    cout << "离开时间："<<p.Out << "    进入时间：" << p.In<<endl;
     duration = p.Out-p.In;
     if (duration <= 1500)
     {
@@ -24,6 +24,7 @@ double parking_cost(Car p)
     {
         duration = floor(duration / 10000 + 1);
     }
+    cout << "在停车场停留的时间为："<<duration<<"h"<<endl;
     cost = duration * parking_cost_per_hour;
     return cost;
 }
