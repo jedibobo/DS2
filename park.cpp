@@ -263,7 +263,7 @@ void ParkingLot<type>::check() {
     string temp_Plate;
     printf("停车位编号       车牌号     入库时间\n");
     int j = 0; int i = 0;
-    for (emmm = 0; emmm < height; emmm++) {
+    for (emmm = 0; this->IsEmpty()!=true; emmm++) {
         this->Pop(temp);
         temp_Plate = temp.Plate;
         tp.Push(temp);
@@ -284,6 +284,8 @@ void ParkingLot<type>::check() {
         emmm++;
         temp_Plate = temp.Plate;
         Print_Stall(13, h * 4-3, 1, temp_Plate);
+        
+        
         Print_Stall(26, h * 4 - 3, 1, temp.In);
         this->Push(temp);
         h++;

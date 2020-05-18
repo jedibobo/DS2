@@ -11,7 +11,7 @@ int read_line;
 int main()
 {	
     //cyh
-    //
+    
     ParkingLot<Car> p;
     tempParkingLot<Car> tp;
     Pavement<Car> p1;
@@ -26,7 +26,7 @@ int main()
     cout << "4：车辆驶离" << endl;
     cout << "输入其他任意键退出系统" << endl;
     int choice; cin >> choice;
-    //
+    //////////
     switch (choice) 
     {
     case 1:

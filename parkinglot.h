@@ -13,6 +13,7 @@
 #include <iostream>
 #include<windows.h>
 #include<stdlib.h>
+#include<string>
 
 const unsigned maxSpace = 15;//最大停车数量
 
