@@ -45,6 +45,7 @@ public:
     ~ParkingLot() { Clear(); }
     void Clear();
     inline bool IsEmpty() { return (height == 0) ? true : false; }
+    bool IsFull();
     bool Push(type& x);
     bool Pop(type& x);
     bool Pop1(type& x);//取出指定车
