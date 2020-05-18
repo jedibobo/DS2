@@ -10,7 +10,7 @@ int read_line;
 int main()
 {	
     //cyh
-    
+    //
     ParkingLot<Car> p;
     tempParkingLot<Car> tp;
     Pavement<Car> p1;

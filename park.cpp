@@ -27,7 +27,7 @@ void Print_Stall(int x, int y, int status, T licence) {
     if (status == 0||status==2) {
         color = 2;
         if(status==2) Print(x + 2, y + 1, licence, color);  //此时为查询便道，该车位为空
-        else if(status==0) Print(x + 2, y + 1, "空", color); //此时为查询车位，车位为空
+        else if(status==0) Print(x + 2, y + 1, licence, color); //此时为查询车位，车位为空
     }
     else {
         color = 4;
@@ -218,7 +218,9 @@ void ParkingLot<type>::Print_park() {
             emmm++;
             if (emmm<15-height) {
                 state = 0;
-                temp_Plate = "空";
+                //temp_Plate = emmm;
+                Print_Stall(i * 13, h * 4, state, emmm);
+                continue;
             }
             else {
                 state = 1;
