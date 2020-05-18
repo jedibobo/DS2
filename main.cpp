@@ -20,9 +20,9 @@ int main()
     bool check, checkp, flag;
     L1:cout << "请选择要执行的操作" << endl;
     cout << "1：查询当前停车场" << endl;
-    cout << "2：查询当前便道" << endl;
-    cout << "3：车辆驶入" << endl;
-    cout << "4：车辆驶离" << endl;
+    //cout << "2：查询当前便道" << endl;
+    cout << "2：车辆驶入" << endl;
+    cout << "3：车辆驶离" << endl;
     cout << "输入其他任意键退出系统" << endl;
     int choice; cin >> choice;
     
@@ -35,7 +35,7 @@ int main()
         p1.Print_pavement();//
         goto L1;
     }
-    case 2:
+    case 9:
     {
         system("cls");
         p1.getstate();
@@ -43,7 +43,7 @@ int main()
         goto L1;
     }
        
-    case 3:
+    case 2:
     {
         cout << "0是手动输入，1是从文件中读取" << endl;
         cin >> flag;
@@ -147,7 +147,7 @@ int main()
             std::cout << "【NOTICE】已按照要求的数量读取并写入。" << std::endl;
         }
     }
-    case 4:
+    case 3:
     {
         system("cls");
         cout << "请输入车牌号,all全部清空重置数据库" << endl;
