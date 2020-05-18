@@ -211,6 +211,17 @@ void ParkingLot<type>::Print_park() {
     int emmm=-1;   //检测有多少个空位
     string temp_Plate;
     Print(0, 3, "停车场状态", 15);
+    for (i = 4; i < 8; i++) {
+        //if(i!=5&&i!=6)
+        Print(0, i, "#", 15);
+        Print(2, i, "#", 15);
+        if (i != 5 && i != 6) {
+            Print(1, i, "#", 15);
+        }
+        Print(1, 5, "大", 15);
+        Print(1, 6, "门", 15);
+    }
+    
     for (j = 0; j < maxSpace; ) {
         for (i = 0; i < 5; i++) {
             if (j >= maxSpace) break;
@@ -219,7 +230,7 @@ void ParkingLot<type>::Print_park() {
             if (emmm<15-height) {
                 state = 0;
                 //temp_Plate = emmm;
-                Print_Stall(i * 13, h * 4, state, emmm);
+                Print_Stall(i * 13+4, h * 4, state, emmm);
                 continue;
             }
             else {
@@ -228,7 +239,7 @@ void ParkingLot<type>::Print_park() {
                 temp_Plate = temp.Plate;
                 tp.Push(temp);
             }
-            Print_Stall(i * 13, h * 4, state, temp_Plate);
+            Print_Stall(i * 13+4, h * 4, state, temp_Plate);
         }
         h = h + 1;
     }

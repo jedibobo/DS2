@@ -32,6 +32,7 @@ int main()
     {
         system("cls");
         p.Print_park();
+        p1.Print_pavement();//
         goto L1;
     }
     case 2:

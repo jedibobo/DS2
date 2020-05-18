@@ -47,7 +47,7 @@ template<class type>
 void Pavement<type>::Print_pavement() {
 	int i = 0, j = 0;
 	int status;
-	int h = 1;
+	int h = 5;
 	type temp;
 	int car_num = (maxsize + tail - head) % maxsize;
 	Print(0, h * 4 - 1, "±ãµÀ×´Ì¬", 15);
